@@ -27,11 +27,7 @@ export class WebService {
   }
 
   atualizarProduto(produto) : Observable<any> {
-    let body = new HttpParams();
-    body = body.set("title", produto.title);
-    body = body.set("price", String(produto.price));
-    body = body.set("description", produto.description);
-    return this.http.put(`${this.baseURL}/products/${produto._id}`, body, { observe: "response"})
+    return this.http.put(`${this.baseURL}/products/${produto._id}`, produto, { observe: "response"})
   }
   constructor(private http : HttpClient) { }
 }
