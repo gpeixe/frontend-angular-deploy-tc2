@@ -9,7 +9,7 @@ import { Observable} from "rxjs";
 export class WebService {
   @Output() fire: EventEmitter<any> = new EventEmitter();
 
-  baseURL = "https://backend-tc2-peixe.glitch.me/";
+  baseURL = "https://backend-tc2-peixe.glitch.me";
 
   getProdutos() : Observable<Produto[]> {
     return this.http.get<Produto[]>(this.baseURL + "/products");
